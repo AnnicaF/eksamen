@@ -1,0 +1,626 @@
+html {
+font-family: 'Roboto', sans-serif;
+background-color: #4E9F3D;
+overflow-x: hidden;
+}
+
+body{
+  margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    max-width: 400px;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 5px;
+    text-align: left;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+    color: white;
+}
+
+.section-title{
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    color: white;
+    margin-bottom: 130px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.container{
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+   background:white;
+   text-align: center;
+   position: fixed;
+   z-index: 999;
+   width: 100%;
+   height: 100px;
+   align-items: center;
+}
+
+.header-logo{
+  width: min(50vw, 200px);
+}
+
+.nav-toggle{
+    display: none;
+}
+
+.nav-toggle-label{
+    position: absolute;
+    top: 0;
+    left:0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+display:block;
+background: black;
+height: 2px;
+width: 2em;
+border-radius: 2px;
+position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before{
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+    top: 7px;
+}
+
+
+nav{
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: white;
+    width: 100%;
+    transform:scale(1,0);
+    transform-origin: top;
+    transition:transform 400ms ease-in-out;
+}
+
+nav ul{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition:opacity 150ms ease-in-out;
+}
+
+nav a:hover{
+    color:#f58641;
+}
+
+.nav-toggle:checked ~nav{
+   transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+#hero::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    opacity:.3;
+    z-index: -1;
+}
+
+#hero{
+  background-image: url(./billeder/forside.jpg);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+  height: 750px;
+}
+
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#hero .cta{
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background-color: orange;
+  border:2px black;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  margin-top: 30px;
+  transition: .3s ease background-color;
+}
+
+#hero h1{
+  display: block;
+  width: fit-content;
+  font-size: 30px;
+  position: relative;
+  color: white;
+  text-transform: uppercase;
+}
+
+#projekt{
+  background-color: #1E5128;
+}
+
+#projekt .projekt{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+#projekt .projekt-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+#projekt .projekt-info{
+    padding: 20px;
+    flex-basis: 50%;
+    height: 50%;
+    background:#D8E9A8;
+    color:black;
+}
+
+ .projekt-info h2{
+    font-size:20px;
+    font-weight: 500;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+#projekt .projekt-info p{
+    color: black;
+    font-size:16px ;
+}
+
+.projekt-sprite {
+    width: 400px;
+    height: 360px;
+   background: url(./billeder/rigtig.png) 0 0 no-repeat;
+   animation: play 1s steps(5) infinite;
+}
+@keyframes play {
+    0% {
+        background-position: 0px;
+
+    }
+    100% {background-position: -2500px;
+    }
+}
+
+#projekt .projekt-img img{
+transition: .3s ease transform;
+float: left;
+   width:  400px;
+   height: 300px;
+}
+
+#projekt .projekt-item:hover .projekt-img img{
+transform: scale(1.1);
+}
+
+.custom-shape-divider-bottom-1641666525 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1641666525 svg {
+    position: relative;
+    display: block;
+    width: calc(115% + 1.3px);
+    height: 71px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1641666525 .shape-fill {
+    fill: #D8E9A8;
+}
+
+#ommig{
+  background-color: #D8E9A8;
+}
+
+#ommig .ommig {
+flex-direction: column-reverse;
+max-width: 1264px;
+margin: 0 auto;
+}
+
+#ommig .section-title{
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    color: black;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-top:auto;
+}
+
+#ommig .col-right{
+    width: 100%;
+
+}
+#ommig .col-left{
+  margin: 10px;
+  margin-bottom: 40px;
+}
+
+#ommig .col-right p{
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: black;
+    padding: 1px 40px 10px;
+}
+
+#kontakt {
+  background-color: white;
+}
+
+#kontakt .kontakt{
+    flex-direction: column;
+    max-width: 100px;
+    margin:0 auto;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+#kontakt .kontakt-items{
+    width: 200px;
+}
+
+#kontakt .kontakt-item{
+    width:80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 18px 0 #2D6187;
+    background: #D8E9A8;
+    font-family: 'Roboto', sans-serif;
+    transition: .3s ease box-shadow;
+}
+
+#kontakt .kontakt-item:hover{
+   box-shadow: 0px 0px 5px 0 #2D6187 ;
+
+}
+#kontakt .icon{
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#kontakt .kontakt-info h3{
+  font-size:20px;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin-bottom:5px;
+  color: black;
+  text-align:center;
+  font-family: 'Roboto', sans-serif;
+  padding: 0px 30px 1px;
+}
+
+#kontakt .kontakt-info h4{
+  font-size:10px;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin-bottom:5px;
+  color: black;
+  text-align:center;
+  font-family: 'Roboto', sans-serif;
+  padding: 0px 30px 1px;
+  }
+
+
+.custom-shape-divider-bottom-1641667468 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1641667468 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 62px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1641667468 .shape-fill {
+    fill: #FFFFFF;
+}
+
+#footer {
+    background-color: #1E5128;
+}
+
+.brand h2{
+  text-transform: uppercase;
+}
+
+.brand h2 span{
+  color:#f58641;
+}
+
+#footer .footer{
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#footer h2{
+    color: white;
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#footer .social-icon{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#footer .social-item{
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+}
+
+#footer .social-item:hover  img{
+  color: orange;
+}
+
+#footer p{
+    color: white;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* media query*/
+
+@media only screen and (min-width:600px){
+
+#hero h1{
+font-size:30px;
+text-transform: uppercase;
+}
+
+#projekt .projekt-item{
+    flex-direction: row;
+}
+
+#projekt .projekt-item:nth-child(even){
+ flex-direction:row-reverse;
+}
+
+#projekt .projekt-item{
+    height: 400px;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+}
+
+#projekt .alle-projekter .projekt-info{
+    height: 100%;
+}
+
+#projekt .alle-projekter .projekt-img{
+    height: 100%;
+}
+.projekt-info h2{
+   font-size: 12px;
+   font-weight: 500;
+   margin-top: 5px;
+   text-transform: uppercase;
+}
+
+
+#projekt .projekt-info p{
+   color: black;
+   font-size: 10px;
+ }
+
+@media only screen and (min-width:700px){
+
+#kontakt .kontakt-items{
+    justify-content: center;
+    width: fit-content;
+}
+
+
+#kontakt .kontakt-item .icon{
+    height: 60px;
+    width: 80px;
+}
+
+#kontakt .kontakt-item .kontakt-info{
+    text-align: left;
+    padding: 0px 30px 1px;
+    font-size: 10px
+}
+
+#projekt .projekt-info h2{
+   font-size: 15px;
+   font-weight: 500;
+   margin-top: 5px;
+   text-transform: uppercase;
+}
+
+
+#projekt .projekt-info p{
+   color: black;
+   font-size: 10px;
+ }
+
+}
+}
+
+@media only screen and (min-width:800px){
+.nav-toggle-label {
+    display: none;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+}
+
+header-logo{
+  grid-column: 2/ 3;
+}
+nav{
+    all:unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+nav li{
+    margin-left: 3em;
+    margin-right: 0;
+
+}
+
+nav a{
+    opacity: 1;
+    position: relative;
+}
+
+nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    background: orange;
+    position: absolute;
+    bottom: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0,1);
+    transition: transform ease-in-out 250ms;
+}
+
+nav a:hover::before{
+    transform: scale(1,1);
+}
+
+
+#ommig .ommig{
+    flex-direction: row;
+}
+
+#ommig .col-left{
+    width: 600px;
+    height: 400px;
+    padding-left: 60px;
+}
+
+#ommig .ommig .col-left .ommig-img::after{
+    left: -45px;
+    top: 5px;
+    height: 98%;
+    width: 98%;
+}
+
+#ommig .col-right{
+    text-align:left;
+    padding: 30px;
+}
+#ommig .col-right h1{
+    text-align: left;
+}
+
+}
